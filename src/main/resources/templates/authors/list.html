@@ -12,11 +12,15 @@
         <th>ID</th>
         <th>First name</th>
         <th>Last name</th>
+        <th>Books</th>
     </tr>
     <tr th:each="author:${authors}">
         <td th:text="${author.id}"></td>
         <td th:text="${author.firstName}"></td>
         <td th:text="${author.lastName}"></td>
+        <th:block th:each="book : ${author.books}">
+            <td th:text="${book.title}"></td>
+        </th:block>
     </tr>
 </table>
 
